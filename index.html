@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Go API Demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+  <h1>Simple Add API (Go)</h1>
+
+  <label>
+    A:
+    <input type="number" id="a" value="2">
+  </label>
+  <label>
+    B:
+    <input type="number" id="b" value="3">
+  </label>
+  <button id="calc">Add</button>
+
+  <pre id="result"></pre>
+
+  <script>
+    async function callAdd(a, b) {
+      const res = await fetch(
+        "https://<your-container-app-url>/api/add?a=" + a + "&b=" + b
+      );
+      if (!res.ok) throw new Error("HTTP " + res.status);
+      return res.json();
+    }
+
+    document.getElementById("calc").addEventListener("click", async () => {
+      const a = document.getElementById("a").value;
+      const b = document.getElementById("b").value;
+      const out = document.getElementById("result");
+      out.textContent = "Loading...";
+      try {
+        const json = await callAdd(a, b);
+        out.textContent = JSON.stringify(json, null, 2);
+      } catch (err) {
+        out.textContent = "Error: " + err.message;
+      }
+    });
+  </script>
+</body>
+</html>
