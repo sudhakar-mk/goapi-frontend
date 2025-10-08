@@ -2,10 +2,8 @@
   "routes": [
     {
       "route": "/api/*",
-      "rewrite": "https://postman-echo.com/get",
-      "allowedRoles": [
-        "anonymous"
-      ]
+      "allowedRoles": ["anonymous"],
+      "rewrite": "https://postman-echo.com/get"
     }
   ]
 }
