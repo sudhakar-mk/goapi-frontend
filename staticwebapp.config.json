@@ -2,7 +2,7 @@
   "routes": [
     {
       "route": "/api/*",
-      "redirect": "https://test2.whitelisland-5a5af531.centralindia.azurecontainerapps.io/api/*",
+      "rewrite": "https://test2.whitelisland-5a5af531.centralindia.azurecontainerapps.io/api/*",
       "allowedRoles": [
         "anonymous"
       ]
