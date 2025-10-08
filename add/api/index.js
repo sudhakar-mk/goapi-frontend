@@ -9,7 +9,7 @@ module.exports = async function (context, req) {
     context.log(`Proxy received a=${a} b=${b} from ${req.headers['x-forwarded-for'] || req.headers.origin}`);
 
     // call your container app (use the direct URL here)
-    const target = `https://test2.whitelisland-5a5af531.centralindia.azurecontainerapps.io/api/add?a=${encodeURIComponent(a)}&b=${encodeURIComponent(b)}`;
+    const target = `https://test2.whiteisland-5a5af531.centralindia.azurecontainerapps.io/api/add?a=${encodeURIComponent(a)}&b=${encodeURIComponent(b)}`;
     const resp = await fetch(target);
     const body = await resp.text();
 
@@ -23,3 +23,4 @@ module.exports = async function (context, req) {
     context.res = { status: 500, body: "proxy error" };
   }
 };
+
