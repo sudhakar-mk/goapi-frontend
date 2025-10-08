@@ -2,7 +2,7 @@
   "routes": [
     {
       "route": "/api/*",
-      "rewrite": "https://test2.whiteisland-5a5af531.centralindia.azurecontainerapps.io/api/*",
+      "rewrite": "https://postman-echo.com/get",
       "allowedRoles": [
         "anonymous"
       ]
