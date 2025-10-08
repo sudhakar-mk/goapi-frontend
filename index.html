@@ -22,7 +22,9 @@
 
   <script>
     async function callAdd(a, b) {
-      const res = await fetch(`/api/add?a=${a}&b=${b}`);
+      const res = await fetch(`/api/add?a=${a}&b=${b}`).then(r => r.json())
+  .then(data => { console.log(data); /* show in UI */ })
+  .catch(err => console.error(err));
       if (!res.ok) throw new Error("HTTP " + res.status);
       return res.json();
     }
