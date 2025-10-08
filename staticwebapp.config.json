@@ -3,7 +3,7 @@
     {
       "route": "/api/*",
       "allowedRoles": ["anonymous"],
-      "rewrite": "https://postman-echo.com/get"
+      "rewrite": "https://google.com"
     }
   ]
 }
