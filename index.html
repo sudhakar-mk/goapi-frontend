@@ -23,7 +23,7 @@
   <script>
     async function callAdd(a, b) {
       const res = await fetch(
-        "https://my-go-app.whiteisland-5a5af531.centralindia.azurecontainerapps.io/api/add?a=" + a + "&b=" + b
+        "https://test2.whiteisland-5a5af531.centralindia.azurecontainerapps.io/api/add?a=" + a + "&b=" + b
       );
       if (!res.ok) throw new Error("HTTP " + res.status);
       return res.json();
